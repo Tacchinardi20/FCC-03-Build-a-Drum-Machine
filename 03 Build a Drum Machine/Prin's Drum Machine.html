@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>The Drum Machine</title>
+
+        <script>
+            function play(str) {
+
+                if (str === "q" || str === "Q") {
+                    document.getElementById('display').innerText = "SOUND 1";
+                } else if (str === "w" || str === "W") {
+                    document.getElementById('display').innerText = "SOUND 2";
+                } else if (str === "e" || str === "E") {
+                    document.getElementById('display').innerText = "SOUND 3";
+                } else if (str === "a" || str === "A") {
+                    document.getElementById('display').innerText = "SOUND 4";
+                } else if (str === "s" || str === "S") {
+                    document.getElementById('display').innerText = "SOUND 5";
+                } else if (str === "d" || str === "D") {
+                    document.getElementById('display').innerText = "SOUND 6";
+                } else if (str === "z" || str === "Z") {
+                    document.getElementById('display').innerText = "SOUND 7";
+                } else if (str === "x" || str === "X") {
+                    document.getElementById('display').innerText = "SOUND 8";
+                } else if (str === "c" || str === "C") {
+                    document.getElementById('display').innerText = "SOUND 9";
+                }
+
+                //console.log(str, " <= The String Passed In ")
+                var audio = document.getElementById(str);
+                audio.play();
+            }
+      
+            window.document.onkeyup = function(event) {
+                let keystroke = event.key
+                if (keystroke === "q" || keystroke === "Q") {
+                    play("Q");
+                } else if (keystroke === "w" || keystroke === "W") {
+                    play("W");
+                } else if (keystroke === "e" || keystroke === "E") {
+                    play("E");
+                } else if (keystroke === "a" || keystroke === "A") {
+                    play("A");
+                } else if (keystroke === "s" || keystroke === "S") {
+                    play("S");
+                } else if (keystroke === "d" || keystroke === "D") {
+                    play("D");
+                } else if (keystroke === "z" || keystroke === "Z") {
+                    play("Z");
+                } else if (keystroke === "x" || keystroke === "X") {
+                    play("X");
+                } else if (keystroke === "c" || keystroke === "C") {
+                    play("C");
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="container" id="drum-machine">
+            <br><h1 class="text-center text-dark bg-success">Drum Machine</h1>
+
+            <div class="card my-4">
+                <div class="card-body bg-warning">
+                    <h5 class="text-center text-dark m-4" id="display">Press the Key Letter on Your Keyboard / Click Its Individual on the Screen</h5>
+                </div>
+            </div>
+
+            <button class="drum-pad btn btn-block btn-info" id="drum-0" onclick="play('Q')">
+                Q
+                <audio src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3" class="clip" id="Q">
+            </button>
+            <button class="drum-pad btn btn-block btn-info" id="drum-1" onclick="play('W')">
+                W
+                <audio src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3" class="clip" id="W">
+            </button>
+            <button class="drum-pad btn btn-block btn-info" id="drum-2" onclick="play('E')">
+                E
+                <audio src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3" class="clip" id="E">
+            </button>
+            <button class="drum-pad btn btn-block btn-info" id="drum-3" onclick="play('A')">
+                A
+                <audio src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3" class="clip" id="A">
+            </button>
+            <button class="drum-pad btn btn-block btn-info" id="drum-4" onclick="play('S')">
+                S
+                <audio src="https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3" class="clip" id="S">
+            </button>
+            <button class="drum-pad btn btn-block btn-info" id="drum-5" onclick="play('D')">
+                D
+                <audio src="https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3" class="clip" id="D">
+            </button>
+            <button class="drum-pad btn btn-block btn-info" id="drum-6" onclick="play('Z')">
+                Z
+                <audio src="https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3" class="clip" id="Z">
+            </button>
+            <button class="drum-pad btn btn-block btn-info" id="drum-7" onclick="play('X')">
+                X
+                <audio src="https://s3.amazonaws.com/freecodecamp/drums/punchy_kick_1.mp3" class="clip" id="X">
+            </button>
+            <button class="drum-pad btn btn-block btn-info" id="drum-8" onclick="play('C')">
+                C
+                <audio src="https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3" class="clip" id="C">
+            </button>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </body>
+</html>
